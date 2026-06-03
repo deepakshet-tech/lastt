@@ -1,8 +1,11 @@
-import { AnimatedCounter, PRODUCTS, ProductCard, TestimonialsSection, TrustMarkers } from "../shared.jsx";
+import { PRODUCTS } from "../data/products.js";
+import { ProductCard } from "./CollectionsPage.jsx";
+import { AnimatedCounter, TestimonialsSection, TrustMarkers } from "../shared.jsx";
 
 export const HomePage = ({
   setPage,
   onAddToCart,
+  onViewProduct,
   setCollectionsTab,
   user,
   onOpenAuth,
@@ -154,6 +157,7 @@ export const HomePage = ({
             Free shipping across India
           </p>
           <div
+            className="home-hero-actions"
             style={{
               display: "flex",
               gap: 14,
@@ -163,7 +167,10 @@ export const HomePage = ({
             }}
           >
             <button
-              onClick={() => setPage("Collections")}
+              onClick={() => {
+                setCollectionsTab("Rings");
+                setPage("Collections");
+              }}
               style={{
                 background: "#fff",
                 color: "var(--brand)",
@@ -221,6 +228,7 @@ export const HomePage = ({
           </div>
           {/* Live stats */}
           <div
+            className="home-stats"
             style={{
               display: "flex",
               gap: 32,
@@ -292,6 +300,7 @@ export const HomePage = ({
             </h2>
           </div>
           <div
+            className="home-category-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
@@ -365,6 +374,7 @@ export const HomePage = ({
       <div style={{ padding: "56px 0" }}>
         <div className="page-container">
           <div
+            className="responsive-section-header"
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -397,7 +407,10 @@ export const HomePage = ({
               </h2>
             </div>
             <button
-              onClick={() => setPage("Collections")}
+              onClick={() => {
+                setCollectionsTab("Rings");
+                setPage("Collections");
+              }}
               style={{
                 background: "none",
                 border: "1.5px solid var(--brand)",
@@ -430,7 +443,7 @@ export const HomePage = ({
                 <ProductCard
                   product={p}
                   onAdd={onAddToCart}
-                  onView={() => {}}
+                  onView={onViewProduct}
                   user={user}
                   onOpenAuth={onOpenAuth}
                   isWishlisted={isWishlisted}
@@ -446,6 +459,7 @@ export const HomePage = ({
       <div style={{ padding: "0 0 56px" }}>
         <div className="page-container">
           <div
+            className="promo-banner"
             style={{
               background: "var(--brand)",
               borderRadius: 6,
@@ -481,7 +495,10 @@ export const HomePage = ({
               </p>
             </div>
             <button
-              onClick={() => setPage("Collections")}
+              onClick={() => {
+                setCollectionsTab("Rings");
+                setPage("Collections");
+              }}
               style={{
                 background: "#FFD700",
                 color: "var(--brand)",
@@ -520,6 +537,7 @@ export const HomePage = ({
       >
         <div className="page-container">
           <div
+            className="responsive-section-header"
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -578,7 +596,7 @@ export const HomePage = ({
                 <ProductCard
                   product={p}
                   onAdd={onAddToCart}
-                  onView={() => {}}
+                  onView={onViewProduct}
                   user={user}
                   onOpenAuth={onOpenAuth}
                   isWishlisted={isWishlisted}

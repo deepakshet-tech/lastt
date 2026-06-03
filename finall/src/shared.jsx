@@ -1,5 +1,6 @@
 /* eslint-disable react-refresh/only-export-components, react-hooks/set-state-in-effect */
 import { useState, useEffect, useRef } from "react";
+import { PRODUCTS } from "./data/products.js";
 
 // ─── SCROLL REVEAL HOOK ───────────────────────────────────────────────────────
 export const useReveal = (threshold = 0.15) => {
@@ -258,6 +259,7 @@ export const GlobalStyle = () => (
       align-items: center;
       gap: 0;
       box-sizing: border-box;
+      justify-content: space-between;
     }
     @media (max-width: 768px) {
       .navbar-inner {
@@ -321,6 +323,59 @@ export const GlobalStyle = () => (
     @media (max-width: 480px) {
       .product-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     }
+    @media (max-width: 640px) {
+      .home-hero-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .home-hero-actions button {
+        width: 100%;
+      }
+      .home-stats {
+        width: 100%;
+        gap: 16px !important;
+        justify-content: space-between !important;
+      }
+      .home-stats > div {
+        flex: 1 1 0;
+      }
+      .home-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+      }
+      .responsive-section-header {
+        align-items: flex-start !important;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .responsive-section-header button {
+        width: 100%;
+      }
+      .promo-banner {
+        align-items: stretch !important;
+        padding: 22px 18px !important;
+      }
+      .promo-banner button {
+        width: 100%;
+      }
+      .product-card p {
+        word-break: break-word;
+      }
+      .card-btn {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+        padding: 9px 4px;
+      }
+    }
+    @media (max-width: 380px) {
+      .product-grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .home-category-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
     /* ── Card button ── */
     .card-btn {
       width: 100%; padding: 10px 0; border: 1.5px solid var(--brand);
@@ -337,1324 +392,7 @@ export const GlobalStyle = () => (
 );
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
-export const PRODUCTS = {
-  Rings: [
-    {
-      id: 1,
-      name: "High Gold Plated Floral Ring",
-      price: 199999,
-      mrp: 1498,
-      img: "https://4.imimg.com/data4/IA/VJ/MY-23163465/gold-ring-500x500.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 2,
-      name: "Diamond Studded Adjustable Ring",
-      price: 199599,
-      mrp: 1111,
-      img: "https://www.candere.com/media/jewellery/images/C001952__1.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 3,
-      name: "Gold Plated Stone Ring",
-      price: 99449,
-      mrp: 1199,
-      img: "https://kinclimg3.bluestone.com/f_jpg,c_scale,w_828,q_80,b_rgb:f0f0f0/giproduct/BIDG0319R180_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-66194.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 4,
-      name: "Micro Gold Twisted Band Ring",
-      price: 199399,
-      mrp: 999,
-      img: "https://kinclimg9.bluestone.com/f_jpg,c_scale,w_828,q_80,b_rgb:f0f0f0/giproduct/BICM0339R06_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-68695.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 21,
-      name: "Classic Pearl Finger Ring",
-      price: 199980,
-      mrp: 899,
-      img: "https://cdn-media.glamira.com/media/product/newgeneration/view/1/sku/MEN3/diamond/diamond-Brillant_AAA/alloycolour/yellow.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 22,
-      name: "Antique Gold Cocktail Ring",
-      price: 199699,
-      mrp: 1799,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQLxf4ZuVgSRs-OFhQyEFl9h9Cucrot883KQ&s.jpeg",
-      tag: "Extra 50% OFF",
-    },
-
-    //----------------
-    {
-      id: 1,
-      name: "High Gold Plated Floral Ring",
-      price: 99999,
-      mrp: 1498,
-      img: "https://kinclimg4.bluestone.com/f_jpg,c_scale,w_1024,q_80,b_rgb:f0f0f0/giproduct/BIRS0388R34_YAA18DIG6XXXXXXXX_ABCD00-BP-PICS-00001-1024-80796.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 2,
-      name: "Diamond Studded Adjustable Ring",
-      price: 155599,
-      mrp: 1111,
-      img: "https://www.rnarayanjewellers.com/cdn/shop/products/Circa-18kt-Gold-Diamond-Ring-1.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 3,
-      name: "Gold Plated Stone Ring",
-      price: 111449,
-      mrp: 1199,
-      img: "https://i.pinimg.com/236x/b8/91/e3/b891e3acdaaf8d98491e28131e865298.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 4,
-      name: "Micro Gold Twisted Band Ring",
-      price: 112399,
-      mrp: 999,
-      img: "https://sencowebfiles.s3.ap-south-1.amazonaws.com/products/HX1hhKJcWumidzI0VghMD15anv9w52Zj8uD3PMDi.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 21,
-      name: "Classic Pearl Finger Ring",
-      price: 122329,
-      mrp: 899,
-      img: "https://m.media-amazon.com/images/I/718B2IPDNxL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 22,
-      name: "Antique Gold Cocktail Ring",
-      price: 111699,
-      mrp: 1799,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzEZkYx0I54eAN8tUmU-8wpssi2B4JldBvSA&s.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 1,
-      name: "High Gold Plated Floral Ring",
-      price: 199999,
-      mrp: 1498,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3hTE2O-c_JCEmI3KnzigtDdiDWYwsJ2wlPA&s.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 2,
-      name: "Diamond Studded Adjustable Ring",
-      price: 99999,
-      mrp: 1111,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTocz9FbiASYGzlt_hZbBbkOKrHNwObOyFStA&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 3,
-      name: "Gold Plated Stone Ring",
-      price: 199999,
-      mrp: 1199,
-      img: "https://5.imimg.com/data5/SELLER/Default/2024/12/474774342/ZF/FT/MR/29287787/aniva-r-5-1.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 4,
-      name: "Micro Gold Twisted Band Ring",
-      price: 111399,
-      mrp: 999,
-      img: "https://5.imimg.com/data5/SELLER/Default/2021/12/IH/JE/CR/70241119/dsc04070.JPG",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 21,
-      name: "Classic Pearl Finger Ring",
-      price: 111329,
-      mrp: 899,
-      img: "https://gandaramjewellers.com/wp-content/uploads/Traditinal-Gold-Ring-For-Women-205.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 22,
-      name: "Antique Gold Cocktail Ring",
-      price: 121699,
-      mrp: 1799,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6b3RuVgCkozXsjQILymSAgTPkv2AaS6ztbA&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 1,
-      name: "High Gold Plated Floral Ring",
-      price: 112549,
-      mrp: 1498,
-      img: "https://sehgalgold.com/wp-content/uploads/2023/05/11r-1.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 2,
-      name: "Diamond Studded Adjustable Ring",
-      price: 131599,
-      mrp: 1111,
-      img: "https://images-static.nykaa.com/media/catalog/product/1/a/1a83fecNF-NISCKA-000976-076GPTWR_3.jpg",
-      tag: "Extra 50% OFF",
-    },
-
-    //---------------
-  ],
-  Necklaces: [
-    {
-      id: 5,
-      name: "High Gold Plated Long Bahubali Chain",
-      price: 231549,
-      mrp: 1149,
-      img: "https://m.media-amazon.com/images/I/71d3NFbWo0L._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 6,
-      name: "Gold Plated Pearl Necklace Set",
-      price: 111699,
-      mrp: 1998,
-      img: "https://m.media-amazon.com/images/I/81s23uB2cLL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 7,
-      name: "Diamond Studded Long Chain",
-      price: 199649,
-      mrp: 2500,
-      img: "https://m.media-amazon.com/images/I/51NYDdz-rXL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 8,
-      name: "Micro Gold Fancy Chain",
-      price: 199599,
-      mrp: 2100,
-      img: "https://m.media-amazon.com/images/I/91LZMSJJ3UL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 23,
-      name: "Layered Kundan Necklace",
-      price: 200899,
-      mrp: 2400,
-      img: "https://m.media-amazon.com/images/I/51NYDdz-rXL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 24,
-      name: "Gold Beaded Choker Necklace",
-      price: 301479,
-      mrp: 1199,
-      img: "https://m.media-amazon.com/images/I/71gZFlFVmzL.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 94,
-      name: "High Gold Plated Long Bahubali Chain",
-      price: 200549,
-      mrp: 1149,
-      img: "https://m.media-amazon.com/images/I/71OOlA0jYEL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 95,
-      name: "Gold Plated Pearl Necklace Set",
-      price: 322699,
-      mrp: 1998,
-      img: "https://d25g9z9s77rn4i.cloudfront.net/uploads/product/194/1737539642_bdac2baf411a5259c0b3.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 96,
-      name: "Diamond Studded Long Chain",
-      price: 222649,
-      mrp: 2500,
-      img: "https://i.etsystatic.com/22562645/r/il/b5dd45/2575344729/il_570xN.2575344729_prll.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 97,
-      name: "Micro Gold Fancy Chain",
-      price: 321599,
-      mrp: 2100,
-      img: "https://assets.myntassets.com/assets/images/27346266/2024/2/2/5a501c84-387a-45a7-a8ee-6c8ef2d093a21706867572618JewellerySet1.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 98,
-      name: "Layered Kundan Necklace",
-      price: 321899,
-      mrp: 2400,
-      img: "https://akshayagold.in/wp-content/uploads/2023/01/021.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 100,
-      name: "Gold Beaded Choker Necklace",
-      price: 211479,
-      mrp: 1199,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT42eKTnQcl80b5A7N7tMovjEzrkNTvoiOdig&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 101,
-      name: "Layered Kundan Necklace",
-      price: 222899,
-      mrp: 2400,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmy99d_i-SJEAUEvPnsspIIlszFRe9um_Z6A&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 102,
-      name: "Gold Beaded Choker Necklace",
-      price: 300479,
-      mrp: 1199,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRiN6o584wasw_3usTe-WDZPyz6HHdQGMpoA&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-
-    //-------
-    {
-      id: 101,
-      name: "Layered Kundan Necklace",
-      price: 200899,
-      mrp: 2400,
-      img: "https://vilvajewels.com/cdn/shop/files/VIL08568.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 102,
-      name: "Gold Beaded Choker Necklace",
-      price: 300479,
-      mrp: 1199,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBOAqXzgwMN-hMiWfou7pjEufX6VObbnwuUA&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-  ],
-  Bracelets: [
-    {
-      id: 9,
-      name: "Gold Plated Adjustable Bracelet",
-      price: 200599,
-      mrp: 2198,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_gO1x3IH_FdFUEZkmkHWYkUC0iHTeXEAlrQ&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 10,
-      name: "Butterfly Charm Bracelet",
-      price: 200580,
-      mrp: 2100,
-      img: "https://5.imimg.com/data5/ECOM/Default/2024/3/402709403/KI/EA/DH/11885699/1-gram-gold-plated-diamond-casual-design-bracelet-ladies-style-a228-soni-fashion-621.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 11,
-      name: "High Gold Stone Bangle Bracelet",
-      price: 199999,
-      mrp: 2100,
-      img: "https://5.imimg.com/data5/ECOM/Default/2024/3/402708807/FV/NG/NA/11885699/1-gram-gold-plated-heart-shape-superior-quality-bracelet-ladies-style-a284-soni-fashion-246-500x500.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 25,
-      name: "Rose Gold Charm Bracelet",
-      price: 299999,
-      mrp: 1499,
-      img: "https://5.imimg.com/data5/ECOM/Default/2024/3/402708804/RM/MY/PK/11885699/1-gram-gold-plated-heart-shape-superior-quality-bracelet-ladies-style-a284-soni-fashion-770-500x500.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 26,
-      name: "Crystal Bangle Set of 4",
-      price: 200699,
-      mrp: 1999,
-      img: "https://5.imimg.com/data5/ECOM/Default/2023/11/362314659/XU/OA/QX/11885699/1-gram-gold-plated-heart-shape-diamond-designer-bracelet-lady-style-a210-ladies-soni-858.jpg",
-      tag: "Extra 50% OFF",
-    },
-    //----------------
-    {
-      id: 9,
-      name: "Gold Plated Adjustable Bracelet",
-      price: 100599,
-      mrp: 2198,
-      img: "https://caratsutra.in/cdn/shop/products/Screenshot_2022-03-05-21-03-38-56_1c337646f29875672b5a61192b9010f9.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 10,
-      name: "Butterfly Charm Bracelet",
-      price: 200580,
-      mrp: 2100,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpIoLcyX3y2N0HZa5TucAvBz1X0FNNEiHA5w&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 11,
-      name: "High Gold Stone Bangle Bracelet",
-      price: 200549,
-      mrp: 2100,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHDaY9QOaEpQ2Fsrko2JJN4YYnlp51KWKCVw&s.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 25,
-      name: "Rose Gold Charm Bracelet",
-      price: 100449,
-      mrp: 1499,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlyDaX5qrjqQYmpdTxvBCtwSUSc7BYxe1rNA&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 26,
-      name: "Crystal Bangle Set of 4",
-      price: 111699,
-      mrp: 1999,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYJaaBY9qOaoa4HQPW48PE7xpFGNC0ekWwnA&s.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 9,
-      name: "Gold Plated Adjustable Bracelet",
-      price: 200599,
-      mrp: 2198,
-      img: "https://www.fashioncrab.com/wp-content/uploads/2023/10/White-Heart-Anti-Tarnish-Bracelet-Rose-Gold-01.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 10,
-      name: "Butterfly Charm Bracelet",
-      price: 200580,
-      mrp: 2100,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxxr1P98rlI-u4RdiHWm11qZ_NQHfKapacEA&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 11,
-      name: "High Gold Stone Bangle Bracelet",
-      price: 200549,
-      mrp: 2100,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaytMvFl812cl1T8m90mlTo9eb7nou6gXQ2g&s.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 25,
-      name: "Rose Gold Charm Bracelet",
-      price: 100449,
-      mrp: 1499,
-      img: "https://images.jdmagicbox.com/quickquotes/images_main/second-hand-men-gold-bracelets-jewellery-for-party-wear-2220151642-jqnrbq18.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 26,
-      name: "Crystal Bangle Set of 4",
-      price: 300699,
-      mrp: 1999,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdE34rISzRSQCxCq6K8s_QecFOGriFRf7AIw&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 26,
-      name: "Crystal Bangle Set of 4",
-      price: 200699,
-      mrp: 1999,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLXlbgm7p2OPa-5f5Ep1F7BOLf4O9Z115b3w&s.png",
-      tag: "Extra 50% OFF",
-    },
-    //--------
-    {
-      id: 26,
-      name: "Crystal Bangle Set of 4",
-      price: 100699,
-      mrp: 1999,
-      img: "https://carltonlondon.co.in/cdn/shop/files/fjb4523_3.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 26,
-      name: "Crystal Bangle Set of 4",
-      price: 200699,
-      mrp: 1999,
-      img: "https://img.tatacliq.com/images/i17//437Wx649H/MP000000022210770_437Wx649H_202405102112091.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 26,
-      name: "Crystal Bangle Set of 4",
-      price: 150699,
-      mrp: 1999,
-      img: "https://images.meesho.com/images/products/645209276/rcfox_512.webp?width=512.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 26,
-      name: "Crystal Bangle Set of 4",
-      price: 130699,
-      mrp: 1999,
-      img: "https://s.alicdn.com/@sc04/kf/H66c60d35f5b54db3954bf627159d0ba9A.jpg",
-      tag: "Extra 50% OFF",
-    },
-  ],
-  Earrings: [
-    {
-      id: 12,
-      name: "Gold Plated Crystal Drop Earrings",
-      price: 99449,
-      mrp: 1499,
-      img: "https://img.tatacliq.com/images/i19//437Wx649H/MP000000023531489_437Wx649H_202409040109041.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 13,
-      name: "Diamond Studded Floral Studs",
-      price: 89399,
-      mrp: 1199,
-      img: "https://www.shreehari.co/media/catalog/product/cache/57db4a1e37f9bcfcae47c0bfd2b59438/w/e/wer215rbw_-_1a.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 14,
-      name: "High Gold Jhumka Earrings",
-      price: 77549,
-      mrp: 2100,
-      img: "https://www.ambery.in/live/img/business_product/4kLN8StW1A_20230509180345.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 27,
-      name: "Pearl Drop Dangle Earrings",
-      price: 76379,
-      mrp: 999,
-      img: "https://img.tatacliq.com/images/i4/450Wx545H/MP000000003837475_450Wx545H_20181025212335.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 28,
-      name: "Gold Hoop Statement Earrings",
-      price: 78499,
-      mrp: 1599,
-      img: "https://m.media-amazon.com/images/I/71SJYa3LyfL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-
-    //---------
-    {
-      id: 103,
-      name: "Gold Plated Crystal Drop Earrings",
-      price: 76449,
-      mrp: 1499,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEeYFqaaCoGYE0puSCI8ttJCYKIN82qiLEgA&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 104,
-      name: "Diamond Studded Floral Studs",
-      price: 70399,
-      mrp: 1199,
-      img: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw677f6639/images/hi-res/511069SOEAGA00_1.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 105,
-      name: "High Gold Jhumka Earrings",
-      price: 66549,
-      mrp: 2100,
-      img: "https://rukmini1.flixcart.com/image/1500/1500/xif0q/earring/4/o/l/na-vfj2428erg-10-vighnaharta-original-imahfprwszcptytf.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 106,
-      name: "Pearl Drop Dangle Earrings",
-      price: 65379,
-      mrp: 999,
-      img: "https://assets.ajio.com/medias/sys_master/root/20240417/54O1/661ff95205ac7d77bb1478b3/-473Wx593H-467259283-gold-MODEL.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 107,
-      name: "Gold Hoop Statement Earrings",
-      price: 63499,
-      mrp: 1599,
-      img: "https://assets.ajio.com/medias/sys_master/root/20240524/dYDC/6650b22905ac7d77bb78a00b/-473Wx593H-6006973660-multi-MODEL.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 108,
-      name: "Diamond Studded Floral Studs",
-      price: 77399,
-      mrp: 1199,
-      img: "https://img.tatacliq.com/images/i17//437Wx649H/MP000000022210932_437Wx649H_202405102117565.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 109,
-      name: "High Gold Jhumka Earrings",
-      price: 79549,
-      mrp: 2100,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSryBH1vTNfQmuztyZzRAZ-0Z-T7qZO6tjFwQ&s.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 110,
-      name: "Pearl Drop Dangle Earrings",
-      price: 70379,
-      mrp: 999,
-      img: "https://i.pinimg.com/236x/1a/85/57/1a8557756f03a4c1be3af4dc960d3baa.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 111,
-      name: "Gold Hoop Statement Earrings",
-      price: 80499,
-      mrp: 1599,
-      img: "https://www.dazzlesjewellery.in/cdn/shop/files/IMG_2638_83ca4948-6d4a-4196-af06-990c4cb4c16f.jpg",
-      tag: "Extra 50% OFF",
-    },
-    //-----
-    {
-      id: 110,
-      name: "Pearl Drop Dangle Earrings",
-      price: 81379,
-      mrp: 999,
-      img: "https://purplesecret.in/cdn/shop/files/10_8.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 111,
-      name: "Gold Hoop Statement Earrings",
-      price: 88499,
-      mrp: 1599,
-      img: "https://www.chidambaramgoldcovering.com/image/cache/catalog/ChidambaramGoldCovering/earrings/er4052-new-two-gram-gold-stud-earring-shop-online-1a-850x1000.jpg",
-      tag: "Extra 50% OFF",
-    },
-  ],
-  Bangles: [
-    {
-      id: 30,
-      name: "Gold Plated Kundan Bangle Set",
-      price: 99799,
-      mrp: 2199,
-      img: "https://img.tatacliq.com/images/i11/437Wx649H/MP000000017922672_437Wx649H_202306131409061.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 31,
-      name: "Antique Finish Floral Bangle",
-      price: 100549,
-      mrp: 1499,
-      img: "https://img.tatacliq.com/images/i11/437Wx649H/MP000000017922666_437Wx649H_202306131409071.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 32,
-      name: "High Gold Stone Bangle Set of 6",
-      price: 121699,
-      mrp: 1999,
-      img: "https://img.tatacliq.com/images/i11/1348Wx2000H/MP000000017922409_1348Wx2000H_202306131359101.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 33,
-      name: "Micro Gold Twist Bangle Pair",
-      price: 121449,
-      mrp: 1199,
-      img: "https://img.tatacliq.com/images/i11/450Wx545H/MP000000017922399_450Wx545H_202306131359011.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 34,
-      name: "Pearl Inlay Wide Bangle",
-      price: 133899,
-      mrp: 2500,
-      img: "https://img.tatacliq.com/images/i11/450Wx545H/MP000000017922664_450Wx545H_202306131409031.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 35,
-      name: "Diamond Cut Gold Bangle",
-      price: 131599,
-      mrp: 1799,
-      img: "https://m.media-amazon.com/images/I/81JTJwH8SRL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    //-----------------------------
-    {
-      id: 118,
-      name: "Antique Finish Floral Bangle",
-      price: 141549,
-      mrp: 1499,
-      img: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw550e0ab3/images/hi-res/510115VEA2A00.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 119,
-      name: "High Gold Stone Bangle Set of 6",
-      price: 151699,
-      mrp: 1999,
-      img: "https://svtmjewels.com/cdn/shop/files/SV-107-0182-_2.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 120,
-      name: "Micro Gold Twist Bangle Pair",
-      price: 113449,
-      mrp: 1199,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQd2Lst1HElvRVJ-5ZIj7xXjikNZfG3vrQcQ&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 121,
-      name: "Pearl Inlay Wide Bangle",
-      price: 114899,
-      mrp: 2500,
-      img: "https://estele.co/cdn/shop/products/7B3A4507.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 122,
-      name: "Diamond Cut Gold Bangle",
-      price: 99599,
-      mrp: 1799,
-      img: "https://m.media-amazon.com/images/I/71upVNz0SJL._SY535_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 123,
-      name: "Micro Gold Twist Bangle Pair",
-      price: 93449,
-      mrp: 1199,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBKJDSsZjICw69kCMtIA4sR-9wTTj53BQ9MA&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 124,
-      name: "Pearl Inlay Wide Bangle",
-      price: 99899,
-      mrp: 2500,
-      img: "https://assets.myntassets.com/w_360,q_50,,dpr_2,fl_progressive,f_webp/assets/images/18341666/2022/5/19/1741061c-731c-4eb7-bad0-68d7fab373971652971129107ShiningDivaSetOf6StylishGoldPlatedBangles2.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 125,
-      name: "Diamond Cut Gold Bangle",
-      price: 98599,
-      mrp: 1799,
-      img: "https://assets.myntassets.com/w_360,q_50,,dpr_2,fl_progressive,f_webp/assets/images/2024/SEPTEMBER/24/03MAAKfQ_3d15372f229a4259ba8ae0386b0fabb9.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 124,
-      name: "Pearl Inlay Wide Bangle",
-      price: 100899,
-      mrp: 2500,
-      img: "https://d25g9z9s77rn4i.cloudfront.net/uploads/product/1178/1673964631_b7b27a1eac58ac0399d9.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 125,
-      name: "Diamond Cut Gold Bangle",
-      price: 101599,
-      mrp: 1799,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9KEn1e6iNQ6Uw6krHG1cxTST3znMW54FOXw&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-  ],
-  Chains: [
-    {
-      id: 40,
-      name: "Rope Chain Gold Plated 24 inch",
-      price: 112599,
-      mrp: 1599,
-      img: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=500&q=85",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 41,
-      name: "Box Link Gold Chain 22 inch",
-      price: 133699,
-      mrp: 1999,
-      img: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=500&q=85",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 42,
-      name: "Figaro Chain High Gold 20 inch",
-      price: 142549,
-      mrp: 1499,
-      img: "https://img.tatacliq.com/images/i17//437Wx649H/MP000000022105679_437Wx649H_202405020512271.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 43,
-      name: "Curb Chain Gold Plated Mens",
-      price: 152849,
-      mrp: 2299,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTupnD-F6Zgh-IzWESZW6Znm9QmAbJj2eCcAg&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 44,
-      name: "Singapore Chain Micro Gold",
-      price: 188479,
-      mrp: 1299,
-      img: "https://img.tatacliq.com/images/i17//1348Wx2000H/MP000000022105647_1348Wx2000H_202405020511332.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 45,
-      name: "Herringbone Flat Chain 18 inch",
-      price: 143649,
-      mrp: 1799,
-      img: "https://m.media-amazon.com/images/I/517SaNNNGTL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 46,
-      name: "Fully collymative chain",
-      price: 143643,
-      mrp: 2465,
-      img: "https://i.etsystatic.com/10176016/r/il/7b15b7/3490498076/il_570xN.3490498076_r2y5.jpg",
-      tag: "Extra 30% OFF",
-    },
-    //------------------------
-    {
-      id: 126,
-      name: "Rope Chain Gold Plated 24 inch",
-      price: 132599,
-      mrp: 1599,
-      img: "https://images-static.nykaa.com/media/catalog/product/5/b/5bbbf7dnykfbl0000643_1.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 127,
-      name: "Box Link Gold Chain 22 inch",
-      price: 194699,
-      mrp: 1999,
-      img: "https://salty.co.in/cdn/shop/files/NS14480-G_Model_20_281_29.jpg?v=1773355935&width=1080.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 128,
-      name: "Figaro Chain High Gold 20 inch",
-      price: 164549,
-      mrp: 1499,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaxdJn9Efry2n5Diwtrb8G6YRoRzJnSfB4wA&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 129,
-      name: "Curb Chain Gold Plated Mens",
-      price: 134849,
-      mrp: 2299,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJmojoctKmDDBKRUpghK6_oNDx2DIdi0tsQ&s.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 130,
-      name: "Singapore Chain Micro Gold",
-      price: 194479,
-      mrp: 1299,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75JzLFqDX5WvmWFXO1CSrwHDiOh2eKaJESA&s.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 131,
-      name: "Herringbone Flat Chain 18 inch",
-      price: 122649,
-      mrp: 1799,
-      img: "https://i.pinimg.com/736x/a1/c2/f1/a1c2f1bf5dd3b4f926e3634a207dc6e2.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 132,
-      name: "Fully collymative chain",
-      price: 164643,
-      mrp: 2465,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjKBIuMW6RaqhQm7zIHAxw1xArF1BSmkXRlA&s.jpg",
-      tag: "Extra 30% OFF",
-    },
-    {
-      id: 131,
-      name: "Herringbone Flat Chain 18 inch",
-      price: 194649,
-      mrp: 1799,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Xx_QYH6heLRy2xGG3b-fZ1xrhcfzqoFweA&s.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 132,
-      name: "Fully collymative chain",
-      price: 143643,
-      mrp: 2465,
-      img: "https://images.jdmagicbox.com/quickquotes/images_main/mens-gold-chain-18-inch-22-kt-2222773161-8esgejp9.jpg",
-      tag: "Extra 30% OFF",
-    },
-  ],
-  FestiveCombos: [
-    {
-      id: 50,
-      name: "Diwali Glow Set – Necklace + Earrings",
-      price: 300999,
-      mrp: 2799,
-      img: "https://images.jdmagicbox.com/quickquotes/images_main/oxidized-silver-jewellery-set-2227016774-ucyujkdi.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 51,
-      name: "Navratri Bridal Combo – Full Set",
-      price: 211499,
-      mrp: 4199,
-      img: "https://rukmini1.flixcart.com/image/1500/1500/xif0q/jewellery-set/p/l/j/-original-imahfvf4prbha3d7.jpeg?q=70",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 52,
-      name: "Wedding Season Combo – 5 Piece Set",
-      price: 1321799,
-      mrp: 4999,
-      img: "https://m.media-amazon.com/images/I/71j6wZtI4-L._AC_UY1100_.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 53,
-      name: "Eid Special Gold Plated Combo",
-      price: 1641199,
-      mrp: 3299,
-      img: "https://m.media-amazon.com/images/I/91Yy2XC2lrL._AC_UY1100_.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 54,
-      name: "Teej Bangles + Ring Combo",
-      price: 142799,
-      mrp: 2199,
-      img: "https://m.media-amazon.com/images/I/71V2wqakqmL._AC_UY1100_.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 55,
-      name: "Puja Season Necklace Combo",
-      price: 1941099,
-      mrp: 2999,
-      img: "https://m.media-amazon.com/images/I/618MuGq3FCL._AC_UY1100_.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    //-------------------------
-    {
-      id: 134,
-      name: "Diwali Glow Set – Necklace + Earrings",
-      price: 333999,
-      mrp: 2799,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLN4a-FzRvjni3YgZLPTiFjSj8nvMHXxqV3A&s.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 135,
-      name: "Navratri Bridal Combo – Full Set",
-      price: 3431499,
-      mrp: 4199,
-      img: "https://m.media-amazon.com/images/I/71+APuD2yZL._AC_UY1100_.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 136,
-      name: "Wedding Season Combo – 5 Piece Set",
-      price: 4321799,
-      mrp: 4999,
-      img: "https://5.imimg.com/data5/ECOM/Default/2024/5/416908813/ZI/OU/UE/11885699/lns-634-2.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 137,
-      name: "Eid Special Gold Plated Combo",
-      price: 5531199,
-      mrp: 3299,
-      img: "https://5.imimg.com/data5/ECOM/Default/2024/12/471804106/GP/CX/YO/11885699/eye-catchingdesigngoldplatednecklacesetforwomen-01d1abc5-1a36-4cb8-9496-7fd7216fa4a7-250x250.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 138,
-      name: "Teej Bangles + Ring Combo",
-      price: 232799,
-      mrp: 2199,
-      img: "https://5.imimg.com/data5/ECOM/Default/2023/5/311306858/VI/EW/DY/11885699/lns-232-3-2ab0e220-494f-41b0-b47d-c21dea044dbe.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 139,
-      name: "Puja Season Necklace Combo",
-      price: 321099,
-      mrp: 2999,
-      img: "https://m.media-amazon.com/images/I/81vX-5o-ftL._AC_UY1100_.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 140,
-      name: "Teej Bangles + Ring Combo",
-      price: 231799,
-      mrp: 2199,
-      img: "https://m.media-amazon.com/images/I/51bAMuMOA9L._AC_UY1100_.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 141,
-      name: "Puja Season Necklace Combo",
-      price: 1431099,
-      mrp: 2999,
-      img: "https://images.meesho.com/images/products/607984003/i70n8_512.webp?width=512.jpg",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 140,
-      name: "Teej Bangles + Ring Combo",
-      price: 321799,
-      mrp: 2199,
-      img: "https://toomthekari.com/wp-content/uploads/2025/09/Spiral-Viral-Golden-and-Silver-Bracelets.png",
-      tag: "FESTIVE DEAL",
-    },
-    {
-      id: 141,
-      name: "Puja Season Necklace Combo",
-      price: 3121099,
-      mrp: 2999,
-      img: "https://images.meesho.com/images/products/659948205/dub04_512.jpg",
-      tag: "FESTIVE DEAL",
-    },
-  ],
-  Mangalsutra: [
-    {
-      id: 60,
-      name: "Traditional Black Bead Mangalsutra",
-      price: 200699,
-      mrp: 1999,
-      img: "https://5.imimg.com/data5/ANDROID/Default/2022/4/PN/XO/NC/128315483/product-jpeg-500x500.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 61,
-      name: "Short Diamond Pendant Mangalsutra",
-      price: 100849,
-      mrp: 2399,
-      img: "https://rukminim3.flixcart.com/image/824/972/xif0q/mangalsutra-tanmaniya/k/j/d/jh8318-jewar-mandi-original-imahc7dhutcv9dgb.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 62,
-      name: "Long Chain Tanmaniya Style",
-      price: 100999,
-      mrp: 2799,
-      img: "https://rukmini1.flixcart.com/image/1500/1500/xif0q/mangalsutra-tanmaniya/d/s/x/c5p265-dency-original-imahh29yjmfqxnhk.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 63,
-      name: "Modern Solitaire Mangalsutra",
-      price: 1321199,
-      mrp: 3299,
-      img: "https://cdn3.imitationbazaar.com/p/1440x/1740486617113.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 64,
-      name: "Layered Beaded Mangalsutra Set",
-      price: 121799,
-      mrp: 2199,
-      img: "https://m.media-amazon.com/images/I/81I2wEnmLZL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 65,
-      name: "Gold Plated Dual Tone Mangalsutra",
-      price: 111649,
-      mrp: 1799,
-      img: "https://www.gehnabox.com/cdn/shop/files/GMS766866_800x.jpg",
-      tag: "Extra 50% OFF",
-    },
-    //-------
-    {
-      id: 142,
-      name: "Traditional Black Bead Mangalsutra",
-      price: 142699,
-      mrp: 1999,
-      img: "https://rukminim2.flixcart.com/image/480/640/xif0q/shopsy-mangalsutra-tanmaniya/k/o/b/ms-gold-no-03-yes-rohit-fashion-original-imagwgp3absukszy.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 145,
-      name: "Short Diamond Pendant Mangalsutra",
-      price: 132849,
-      mrp: 2399,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScip8ejfH8NyOm3DKNvcDYN8mlpMi9MkH1NA&s.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 146,
-      name: "Long Chain Tanmaniya Style",
-      price: 121999,
-      mrp: 2799,
-      img: "https://images.meesho.com/images/products/517279243/kdojx_512.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 147,
-      name: "Modern Solitaire Mangalsutra",
-      price: 1211199,
-      mrp: 3299,
-      img: "https://images.meesho.com/images/products/550305484/ojqfc_512.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 148,
-      name: "Layered Beaded Mangalsutra Set",
-      price: 131799,
-      mrp: 2199,
-      img: "https://images.meesho.com/images/products/468079998/6hil6_512.webp?width=512.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 149,
-      name: "Gold Plated Dual Tone Mangalsutra",
-      price: 123649,
-      mrp: 1799,
-      img: "https://assets.ajio.com/medias/sys_master/root/20250630/6rin/6862992fb13fc54edde2be79/brado_jewellery_gold-toned_women_gold-plated_mangalsutra_with_earrings.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 150,
-      name: "Layered Beaded Mangalsutra Set",
-      price: 142799,
-      mrp: 2199,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-pfGQOltSqdzAPcgtNi72reij8gclyV8gA&s.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 151,
-      name: "Gold Plated Dual Tone Mangalsutra",
-      price: 123649,
-      mrp: 1799,
-      img: "https://m.media-amazon.com/images/I/A1sil3BXLvL._AC_UY1100_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 150,
-      name: "Layered Beaded Mangalsutra Set",
-      price: 124799,
-      mrp: 2199,
-      img: "https://d25g9z9s77rn4i.cloudfront.net/uploads/product/1447/1717161366_9bce614e38b7cd6fabc6.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 151,
-      name: "Gold Plated Dual Tone Mangalsutra",
-      price: 123649,
-      mrp: 1799,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OHJBTm0eeCZejKCVugNvvJFdsGGb0dWHRg&s.png",
-      tag: "Extra 50% OFF",
-    },
-  ],
-  Watches: [
-    {
-      id: 70,
-      name: "Gold Bracelet Analogue Ladies Watch",
-      price: 9321299,
-      mrp: 3499,
-      img: "https://cpimg.tistatic.com/6758514/b/4/timesquartz-wrist-watch-for-men.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 71,
-      name: "Rose Gold Mesh Band Watch",
-      price: 2331499,
-      mrp: 3999,
-      img: "https://s.alicdn.com/@sc04/kf/H8bf002e58c364992b9533509a4c7c23dQ/Hot-Selling-Wristwatch-for-Men-Stainless-Steel-Watch-Male-Business-IP-Gold-Plating-Black-Cool-Design-38MM-With-Date.jpg_300x300.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 72,
-      name: "Diamond Studded Dress Watch",
-      price: 1231799,
-      mrp: 4799,
-      img: "https://cpimg.tistatic.com/6758516/b/4/timesquartz-wrist-watch-for-men.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 73,
-      name: "Classic Chain Link Watch Gold",
-      price: 123999,
-      mrp: 2799,
-      img: "https://m.media-amazon.com/images/I/61mxB7OKadL._AC_UY1000_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 74,
-      name: "Floral Dial Bangle Watch",
-      price: 111199,
-      mrp: 3199,
-      img: "https://m.media-amazon.com/images/I/511d6HCF5LL._AC_UY350_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 75,
-      name: "Minimalist Gold Slim Watch",
-      price: 111099,
-      mrp: 2999,
-      img: "https://m.media-amazon.com/images/S/aplus-media/sc/24377773-9556-469c-88fd-6c5ad4236495.__CR0,0,1600,1600_PT0_SX300_V1___.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 76,
-      name: "Gold Bracelet Analogue Ladies Watch",
-      price: 124333,
-      mrp: 6854,
-      img: "https://m.media-amazon.com/images/I/61+MuxZJIbL._AC_UY1000_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 77,
-      name: "Rose Gold Mesh Band Watch",
-      price: 121499,
-      mrp: 3999,
-      img: "https://m.media-amazon.com/images/I/61-MzuhTENL._SX522_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 78,
-      name: "Diamond Studded Dress Watch",
-      price: 4321799,
-      mrp: 4799,
-      img: "https://m.media-amazon.com/images/I/81q7uEjiE6L._AC_UY1000_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 79,
-      name: "Classic Chain Link Watch Gold",
-      price: 421999,
-      mrp: 2799,
-      img: "https://images-static.nykaa.com/media/catalog/product/3/7/37114cc1216386_1.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 80,
-      name: "Floral Dial Bangle Watch",
-      price: 2211199,
-      mrp: 3199,
-      img: "https://m.media-amazon.com/images/I/611sfRog+8L._AC_UY1000_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 81,
-      name: "Minimalist Gold Slim Watch",
-      price: 521099,
-      mrp: 2999,
-      img: "https://m.media-amazon.com/images/I/71ePB5nbwDL._AC_UY1000_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 82,
-      name: "Floral Dial Bangle Watch",
-      price: 421199,
-      mrp: 3199,
-      img: "https://m.media-amazon.com/images/I/61bBnKPeRLL._AC_UY1000_.jpg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 83,
-      name: "Minimalist Gold Slim Watch",
-      price: 221099,
-      mrp: 2999,
-      img: "https://rukmini1.flixcart.com/image/1500/1500/jx0prbk0/watch/u/q/j/stylish-black-golden-steel-belt-stylish-watch-royal-time-original-imafhkgyc4rpdsv4.jpeg",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 82,
-      name: "Floral Dial Bangle Watch",
-      price: 221199,
-      mrp: 3199,
-      img: "https://static.vecteezy.com/system/resources/thumbnails/048/783/886/small/gold-watch-on-transparent-background-genereted-ai-free-png.png",
-      tag: "Extra 50% OFF",
-    },
-    {
-      id: 83,
-      name: "Minimalist Gold Slim Watch",
-      price: 551099,
-      mrp: 2999,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2T-2dxbUH5tbsjcv2s_krA7ow4nYBNK-k-A&s.jpeg",
-      tag: "Extra 50% OFF",
-    },
-  ],
-};
-
-export const BRIDAL = [
-  {
-    id: 1,
-    name: "Duchess Bridal Set",
-    price: "From ₹8,500",
-    mrp: "₹17,000",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZqfkNyDhWzYVfleiGvqqK4j9Ftw05BGUT-g&s.jpg",
-    subtitle: "For the timeless bride",
-  },
-  {
-    id: 2,
-    name: "Blossom Bridal Suite",
-    price: "From ₹5,200",
-    mrp: "₹10,400",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfChw6jVgGlHPfGXMNvWlXIy6_De1eWAUOgQ&s.jpg",
-    subtitle: "Floral romance in gold",
-  },
-  {
-    id: 3,
-    name: "Midnight Bridal Collection",
-    price: "From ₹11,000",
-    mrp: "₹22,000",
-    img: "https://4.imimg.com/data4/UI/RV/MY-6914093/bridal-bangles-500x500.jpg",
-    subtitle: "Sapphire and diamond luxury",
-  },
-  {
-    id: 4,
-    name: "Heritage Bridal Set",
-    price: "From ₹14,000",
-    mrp: "₹28,000",
-    img: "https://img.tatacliq.com/images/i20//437Wx649H/MP000000024280667_437Wx649H_202411010200301.jpeg",
-    subtitle: "Generational heirloom quality",
-  },
-  {
-    id: 5,
-    name: "Rajwadi Bridal Suite",
-    price: "From ₹9,500",
-    mrp: "₹19,000",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNVScExm1ulxMtGEagIylz33nf90VSetX8wTm6K2L0VA&s.jpg",
-    subtitle: "Royal Rajasthani opulence",
-  },
-  {
-    id: 6,
-    name: "Minimalist Bridal Edit",
-    price: "From ₹4,800",
-    mrp: "₹9,600",
-    img: "https://i.shgcdn.com/4c0871d3-2f53-40d9-bbbd-1b831a59ac6d/-/format/auto/-/preview/3000x3000/-/quality/lighter/.png",
-    subtitle: "Modern bride, timeless gold",
-  },
-  {
-    id: 5,
-    name: "Rajwadi Bridal Suite",
-    price: "From ₹9,500",
-    mrp: "₹19,000",
-    img: "https://images.meesho.com/images/products/405237836/egr9r_512.webp?width=512.jpg",
-    subtitle: "Royal Rajasthani opulence",
-  },
-  {
-    id: 6,
-    name: "Minimalist Bridal Edit",
-    price: "From ₹4,800",
-    mrp: "₹9,600",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ703r6KaUUr63LKe66j01R97AcgaEJq-dXqUXgCHJuA&s.jpeg",
-    subtitle: "Modern bride, timeless gold",
-  },
-];
+export { PRODUCTS };
 
 export const TESTIMONIALS = [
   {
@@ -1695,7 +433,8 @@ export const TESTIMONIALS = [
   },
 ];
 
-export const getDiscount = (price, mrp) => Math.round(((mrp - price) / mrp) * 100);
+export const getDiscount = (price, mrp) =>
+  Math.round(((mrp - price) / mrp) * 100);
 
 export const getProductImages = (product) => {
   const providedImages = product.images || product.gallery || [];
@@ -1714,7 +453,10 @@ export const getRelatedProducts = (product, limit = 4) => {
   );
   const orderedProducts =
     productIndex >= 0
-      ? [...products.slice(productIndex + 1), ...products.slice(0, productIndex)]
+      ? [
+          ...products.slice(productIndex + 1),
+          ...products.slice(0, productIndex),
+        ]
       : products;
 
   return orderedProducts
@@ -2367,20 +1109,64 @@ export const CartDrawer = ({
   onClear,
   onPlaceOrder,
   user,
+  onSaveProfileAddress,
   onOpenAuth,
 }) => {
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [orderDetails, setOrderDetails] = useState(null);
+  const [checkoutStep, setCheckoutStep] = useState("cart");
+  const [addressError, setAddressError] = useState("");
+  const [address, setAddress] = useState({
+    name: user?.name || "",
+    phone: "",
+    line1: "",
+    city: "",
+    pincode: "",
+  });
+  const [paymentMethod, setPaymentMethod] = useState("Cash on Delivery");
   const total = items.reduce(
     (sum, item) => sum + (typeof item.price === "number" ? item.price : 0),
     0
   );
+  const paymentMethods = [
+    "Cash on Delivery",
+    "UPI",
+    "Credit / Debit Card",
+    "Net Banking",
+  ];
 
   useEffect(() => {
     const fn = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", fn);
     return () => window.removeEventListener("keydown", fn);
   }, []);
+
+  const startCheckout = () => {
+    setCheckoutStep("address");
+    setAddressError("");
+  };
+
+  const confirmAddress = () => {
+    const missing = Object.entries(address).find(([, value]) => !value.trim());
+    if (missing) {
+      setAddressError("Please fill all address details before payment.");
+      return;
+    }
+    if (!/^\d{6}$/.test(address.pincode.trim())) {
+      setAddressError("Enter a valid 6 digit pincode.");
+      return;
+    }
+    setAddressError("");
+    onSaveProfileAddress?.({
+      ...address,
+      name: address.name.trim(),
+      phone: address.phone.trim(),
+      line1: address.line1.trim(),
+      city: address.city.trim(),
+      pincode: address.pincode.trim(),
+    });
+    setCheckoutStep("payment");
+  };
 
   const handleCheckout = () => {
     const orderId = "SJ" + Math.floor(100000 + Math.random() * 900000);
@@ -2404,6 +1190,8 @@ export const CartDrawer = ({
       count: items.length,
       name: user.name,
       items: [...items],
+      address: { ...address },
+      paymentMethod,
     };
     setOrderDetails(details);
     setOrderPlaced(true);
@@ -2516,7 +1304,13 @@ export const CartDrawer = ({
                   label: "Estimated Delivery",
                   value: orderDetails?.deliveryDate,
                 },
-                { label: "Delivery To", value: user?.email },
+                { label: "Payment", value: orderDetails?.paymentMethod },
+                {
+                  label: "Delivery To",
+                  value: orderDetails?.address
+                    ? `${orderDetails.address.line1}, ${orderDetails.address.city} - ${orderDetails.address.pincode}`
+                    : user?.email,
+                },
               ].map(({ label, value }) => (
                 <div
                   key={label}
@@ -2835,6 +1629,7 @@ export const CartDrawer = ({
                         borderRadius: 3,
                         cursor: "pointer",
                         marginBottom: 8,
+                        display: checkoutStep === "cart" ? "block" : "none",
                       }}
                     >
                       Login / Sign Up to Checkout
@@ -2879,8 +1674,202 @@ export const CartDrawer = ({
                     >
                       <span>✓</span> Ordering as <strong>{user.name}</strong>
                     </div>
+                    {checkoutStep !== "cart" && (
+                      <div
+                        style={{
+                          background: "#fff",
+                          border: "1px solid var(--brand4)",
+                          borderRadius: 8,
+                          padding: 12,
+                          marginBottom: 12,
+                        }}
+                      >
+                        <div
+                          style={{
+                            display: "grid",
+                            gridTemplateColumns: "1fr 1fr",
+                            gap: 8,
+                            marginBottom: 12,
+                          }}
+                        >
+                          {["Address", "Payment"].map((step, index) => {
+                            const active =
+                              (checkoutStep === "address" && index === 0) ||
+                              (checkoutStep === "payment" && index === 1);
+                            const done =
+                              checkoutStep === "payment" && index === 0;
+                            return (
+                              <div
+                                key={step}
+                                style={{
+                                  padding: "8px 10px",
+                                  borderRadius: 4,
+                                  background:
+                                    active || done
+                                      ? "var(--brand)"
+                                      : "var(--brand5)",
+                                  color:
+                                    active || done ? "#fff" : "var(--brand1)",
+                                  fontSize: 10,
+                                  fontWeight: 800,
+                                  letterSpacing: "1px",
+                                  textTransform: "uppercase",
+                                  textAlign: "center",
+                                }}
+                              >
+                                {index + 1}. {step}
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        {checkoutStep === "address" && (
+                          <div>
+                            <p
+                              style={{
+                                fontSize: 12,
+                                fontWeight: 800,
+                                color: "var(--brand)",
+                                marginBottom: 10,
+                              }}
+                            >
+                              Confirm Delivery Address
+                            </p>
+                            {[
+                              ["name", "Full Name"],
+                              ["phone", "Mobile Number"],
+                              ["line1", "House / Street Address"],
+                              ["city", "City"],
+                              ["pincode", "Pincode"],
+                            ].map(([key, label]) => (
+                              <input
+                                key={key}
+                                value={address[key]}
+                                onChange={(e) => {
+                                  setAddress((prev) => ({
+                                    ...prev,
+                                    [key]: e.target.value,
+                                  }));
+                                  setAddressError("");
+                                }}
+                                placeholder={label}
+                                maxLength={key === "pincode" ? 6 : undefined}
+                                style={{
+                                  width: "100%",
+                                  padding: "10px 11px",
+                                  border: "1px solid var(--brand4)",
+                                  borderRadius: 4,
+                                  marginBottom: 8,
+                                  fontFamily: "Montserrat",
+                                  fontSize: 12,
+                                  outline: "none",
+                                }}
+                              />
+                            ))}
+                            {addressError && (
+                              <p
+                                style={{
+                                  fontSize: 11,
+                                  color: "var(--red)",
+                                  marginBottom: 10,
+                                }}
+                              >
+                                {addressError}
+                              </p>
+                            )}
+                            <button
+                              onClick={confirmAddress}
+                              style={{
+                                width: "100%",
+                                padding: "12px",
+                                background: "var(--brand)",
+                                color: "#fff",
+                                border: "none",
+                                borderRadius: 3,
+                                fontFamily: "Montserrat",
+                                fontWeight: 700,
+                                fontSize: 10,
+                                letterSpacing: "1.5px",
+                                textTransform: "uppercase",
+                              }}
+                            >
+                              Deliver Here
+                            </button>
+                          </div>
+                        )}
+
+                        {checkoutStep === "payment" && (
+                          <div>
+                            <p
+                              style={{
+                                fontSize: 12,
+                                fontWeight: 800,
+                                color: "var(--brand)",
+                                marginBottom: 10,
+                              }}
+                            >
+                              Select Payment Type
+                            </p>
+                            <div style={{ display: "grid", gap: 8 }}>
+                              {paymentMethods.map((method) => (
+                                <button
+                                  key={method}
+                                  onClick={() => setPaymentMethod(method)}
+                                  style={{
+                                    width: "100%",
+                                    padding: "11px 12px",
+                                    border: `1px solid ${
+                                      paymentMethod === method
+                                        ? "var(--brand)"
+                                        : "var(--brand4)"
+                                    }`,
+                                    borderRadius: 4,
+                                    background:
+                                      paymentMethod === method
+                                        ? "var(--brand5)"
+                                        : "#fff",
+                                    color: "#111",
+                                    fontFamily: "Montserrat",
+                                    fontSize: 12,
+                                    fontWeight: 700,
+                                    textAlign: "left",
+                                    cursor: "pointer",
+                                  }}
+                                >
+                                  {paymentMethod === method ? "●" : "○"}{" "}
+                                  {method}
+                                </button>
+                              ))}
+                            </div>
+                            <button
+                              onClick={() => setCheckoutStep("address")}
+                              style={{
+                                width: "100%",
+                                padding: "9px",
+                                background: "none",
+                                color: "var(--brand2)",
+                                border: "none",
+                                fontFamily: "Montserrat",
+                                fontWeight: 700,
+                                fontSize: 10,
+                                letterSpacing: "1px",
+                                textTransform: "uppercase",
+                                marginTop: 4,
+                              }}
+                            >
+                              Change Address
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
                     <button
-                      onClick={handleCheckout}
+                      onClick={
+                        checkoutStep === "payment"
+                          ? handleCheckout
+                          : startCheckout
+                      }
                       style={{
                         width: "100%",
                         padding: "13px",
@@ -2934,6 +1923,7 @@ export const AuthModal = ({
   onClose,
   user,
   onLogin,
+  onUpdateUser,
   onLogout,
   orders,
   wishlist,
@@ -2949,16 +1939,7 @@ export const AuthModal = ({
     comment: "",
   });
   const [reviews, setReviews] = useState([]);
-  const [addresses, setAddresses] = useState([
-    {
-      id: 1,
-      label: "Home",
-      line1: "12, MG Road",
-      line2: "Rajkot, Gujarat – 360005",
-      phone: "+91 98765 43210",
-      default: true,
-    },
-  ]);
+  const [addresses, setAddresses] = useState(user?.addresses || []);
   const [newAddr, setNewAddr] = useState({
     label: "",
     line1: "",
@@ -2970,6 +1951,7 @@ export const AuthModal = ({
 
   useEffect(() => {
     setMode(user ? "profile" : "login");
+    setAddresses(user?.addresses || []);
   }, [user]);
   useEffect(() => {
     const fn = (e) =>
@@ -3054,18 +2036,30 @@ export const AuthModal = ({
 
   const saveAddress = () => {
     if (!newAddr.label || !newAddr.line1) return;
-    setAddresses((prev) => [
-      ...prev,
-      { ...newAddr, id: Date.now(), default: false },
-    ]);
+    setAddresses((prev) => {
+      const next = [
+        ...prev,
+        { ...newAddr, id: Date.now(), default: prev.length === 0 },
+      ];
+      onUpdateUser?.({ addresses: next });
+      return next;
+    });
     setNewAddr({ label: "", line1: "", line2: "", phone: "" });
     setAddingAddr(false);
   };
 
   const deleteAddress = (id) =>
-    setAddresses((prev) => prev.filter((a) => a.id !== id));
+    setAddresses((prev) => {
+      const next = prev.filter((a) => a.id !== id);
+      onUpdateUser?.({ addresses: next });
+      return next;
+    });
   const setDefault = (id) =>
-    setAddresses((prev) => prev.map((a) => ({ ...a, default: a.id === id })));
+    setAddresses((prev) => {
+      const next = prev.map((a) => ({ ...a, default: a.id === id }));
+      onUpdateUser?.({ addresses: next });
+      return next;
+    });
 
   // shared input style
   const inp = (err) => ({
@@ -3273,37 +2267,42 @@ export const AuthModal = ({
                 {[
                   ["Full Name", user.name],
                   ["Email", user.email],
+                  ["Member ID", user.memberId],
                   ["Member Since", user.joinDate],
+                  ["Last Login", user.lastLogin],
+                  ["Password Strength", user.passwordStrength],
                   ["Status", "Gold Member ✨"],
-                ].map(([k, v]) => (
-                  <div
-                    key={k}
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      padding: "7px 0",
-                      borderBottom: "1px solid var(--brand4)",
-                      alignItems: "center",
-                    }}
-                  >
-                    <span
+                ]
+                  .filter(([, v]) => v)
+                  .map(([k, v]) => (
+                    <div
+                      key={k}
                       style={{
-                        fontSize: 10,
-                        fontWeight: 700,
-                        color: "var(--brand2)",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.5px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        padding: "7px 0",
+                        borderBottom: "1px solid var(--brand4)",
+                        alignItems: "center",
                       }}
                     >
-                      {k}
-                    </span>
-                    <span
-                      style={{ fontSize: 12, fontWeight: 600, color: "#111" }}
-                    >
-                      {v}
-                    </span>
-                  </div>
-                ))}
+                      <span
+                        style={{
+                          fontSize: 10,
+                          fontWeight: 700,
+                          color: "var(--brand2)",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.5px",
+                        }}
+                      >
+                        {k}
+                      </span>
+                      <span
+                        style={{ fontSize: 12, fontWeight: 600, color: "#111" }}
+                      >
+                        {v}
+                      </span>
+                    </div>
+                  ))}
               </div>
 
               <div
@@ -3704,6 +2703,45 @@ export const AuthModal = ({
                   marginBottom: 14,
                 }}
               >
+                {addresses.length === 0 && (
+                  <div
+                    style={{
+                      border: "1px dashed var(--brand3)",
+                      borderRadius: 8,
+                      padding: "14px",
+                      background: "var(--brand5)",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: 20,
+                        marginBottom: 6,
+                      }}
+                    >
+                      🏠
+                    </p>
+                    <p
+                      style={{
+                        fontSize: 12,
+                        color: "var(--brand)",
+                        fontWeight: 700,
+                        marginBottom: 4,
+                      }}
+                    >
+                      No address saved yet
+                    </p>
+                    <p
+                      style={{
+                        fontSize: 11,
+                        color: "var(--brand2)",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      Your checkout delivery address will appear here.
+                    </p>
+                  </div>
+                )}
                 {addresses.map((addr) => (
                   <div
                     key={addr.id}
@@ -4413,6 +3451,7 @@ export const Navbar = ({
   onCartOpen,
   onProfileOpen,
   user,
+  activeCollectionTab,
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const navLinks = [
@@ -4654,42 +3693,55 @@ export const Navbar = ({
         }}
       >
         <div
+          className="subnav-inner"
           style={{
             display: "flex",
             padding: "0 24px",
             minWidth: "max-content",
-            gap: "65px",
+            gap: 0,
           }}
         >
-          {subNavItems.map((item) => (
-            <button
-              key={item}
-              onClick={() => handleSubNav(item)}
-              style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                fontFamily: "Montserrat",
-                fontWeight: 600,
-                fontSize: 11,
-                color: "rgba(0,0,0,0.7)",
-                padding: "10px 14px",
-                whiteSpace: "nowrap",
-                borderBottom: "2px solid transparent",
-                transition: "all 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "var(--brand)";
-                e.currentTarget.style.borderBottomColor = "var(--brand)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "rgba(0,0,0,0.7)";
-                e.currentTarget.style.borderBottomColor = "transparent";
-              }}
-            >
-              {item}
-            </button>
-          ))}
+          {subNavItems.map((item) => {
+            const isActive =
+              (item === "HOME" && page === "Home") ||
+              (page === "Collections" &&
+                SUBNAV_MAP[item] === activeCollectionTab);
+            return (
+              <button
+                key={item}
+                onClick={() => handleSubNav(item)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  fontFamily: "Montserrat",
+                  fontWeight: 600,
+                  fontSize: 11,
+                  color: isActive ? "var(--brand)" : "rgba(0,0,0,0.7)",
+                  padding: "10px 14px",
+                  whiteSpace: "nowrap",
+                  borderBottom: `2px solid ${
+                    isActive ? "var(--brand)" : "transparent"
+                  }`,
+                  transition: "all 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "var(--brand)";
+                  e.currentTarget.style.borderBottomColor = "var(--brand)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = isActive
+                    ? "var(--brand)"
+                    : "rgba(0,0,0,0.7)";
+                  e.currentTarget.style.borderBottomColor = isActive
+                    ? "var(--brand)"
+                    : "transparent";
+                }}
+              >
+                {item}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -5078,194 +4130,6 @@ export const TestimonialsSection = () => (
 );
 
 // ─── PAGE: HOME ───────────────────────────────────────────────────────────────
-export const BridalCard = ({ item, onAddToCart, user, onOpenAuth }) => {
-  const [hovered, setHovered] = useState(false);
-  const [added, setAdded] = useState(false);
-  const [loginPrompt, setLoginPrompt] = useState(false);
-
-  const handleAdd = () => {
-    if (!user) {
-      setLoginPrompt(true);
-      setTimeout(() => setLoginPrompt(false), 2500);
-      return;
-    }
-    onAddToCart(item);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1600);
-  };
-
-  return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        background: "#fff",
-        border: `1px solid ${hovered ? "var(--brand3)" : "var(--brand4)"}`,
-        borderRadius: 8,
-        overflow: "hidden",
-        boxShadow: hovered
-          ? "0 10px 32px rgba(90,55,25,0.15)"
-          : "0 2px 8px rgba(90,55,25,0.04)",
-        transition: "all 0.3s",
-      }}
-    >
-      <div style={{ position: "relative", overflow: "hidden" }}>
-        <div
-          style={{
-            paddingBottom: "65%",
-            position: "relative",
-            background: "#f5f0eb",
-          }}
-        >
-          <img
-            src={item.img}
-            alt={item.name}
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-              transform: hovered ? "scale(1.05)" : "scale(1)",
-              transition: "transform 0.5s ease",
-            }}
-          />
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            top: 10,
-            left: 10,
-            background: "var(--brand)",
-            color: "#fff",
-            fontSize: 9,
-            fontWeight: 700,
-            padding: "3px 10px",
-            borderRadius: 2,
-            letterSpacing: "0.5px",
-          }}
-        >
-          BRIDAL SPECIAL · 50% OFF
-        </div>
-      </div>
-      <div style={{ padding: "18px 20px 20px" }}>
-        <p
-          style={{
-            fontSize: 10,
-            color: "var(--brand2)",
-            marginBottom: 5,
-            fontStyle: "italic",
-          }}
-        >
-          {item.subtitle}
-        </p>
-        <h3
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontWeight: 700,
-            fontSize: 20,
-            color: "var(--brand)",
-            marginBottom: 12,
-            lineHeight: 1.2,
-          }}
-        >
-          {item.name}
-        </h3>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            marginBottom: 16,
-          }}
-        >
-          <span style={{ fontWeight: 800, fontSize: 16 }}>{item.price}</span>
-          <span
-            style={{
-              fontSize: 12,
-              color: "rgba(0,0,0,0.32)",
-              textDecoration: "line-through",
-            }}
-          >
-            {item.mrp}
-          </span>
-          <span
-            style={{
-              fontSize: 10,
-              fontWeight: 700,
-              color: "var(--sale-text)",
-              background: "var(--sale-bg)",
-              padding: "2px 7px",
-              borderRadius: 2,
-            }}
-          >
-            50% OFF
-          </span>
-        </div>
-        {loginPrompt ? (
-          <div
-            style={{
-              background: "#fff8e1",
-              border: "1px solid #ffe082",
-              borderRadius: 3,
-              padding: "8px 10px",
-              textAlign: "center",
-            }}
-          >
-            <p
-              style={{
-                fontSize: 10,
-                fontWeight: 700,
-                color: "#e65100",
-                marginBottom: 4,
-              }}
-            >
-              🔒 Please login to add items
-            </p>
-            <button
-              onClick={onOpenAuth}
-              style={{
-                fontSize: 10,
-                fontWeight: 700,
-                color: "var(--brand)",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                textDecoration: "underline",
-              }}
-            >
-              Login / Sign Up →
-            </button>
-          </div>
-        ) : (
-          <button
-            onClick={handleAdd}
-            style={{
-              width: "100%",
-              padding: "11px 0",
-              border: `1.5px solid ${added ? "var(--green)" : "var(--brand)"}`,
-              background: added ? "var(--green)" : "#fff",
-              color: added ? "#fff" : "var(--brand)",
-              fontFamily: "Montserrat",
-              fontWeight: 700,
-              fontSize: 10,
-              letterSpacing: "1.5px",
-              textTransform: "uppercase",
-              borderRadius: 3,
-              cursor: "pointer",
-              transition: "all 0.25s",
-            }}
-          >
-            {added ? "✓ Added to Bag" : "Enquire / Add to Bag"}
-          </button>
-        )}
-      </div>
-    </div>
-  );
-};
-
-// ─── PAGE: BRIDAL ─────────────────────────────────────────────────────────────
 export const Field = ({
   label,
   type = "text",
@@ -5898,3 +4762,4 @@ export const Footer = ({ setPage, onPolicyPage, onShopCategory }) => (
 );
 
 // ─── APP ROOT ─────────────────────────────────────────────────────────────────
+

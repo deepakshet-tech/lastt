@@ -403,5 +403,3 @@ export const ProductDetailPage = ({
     </div>
   );
 };
-
-// ─── BRIDAL CARD (standalone so hooks are legal) ──────────────────────────────
